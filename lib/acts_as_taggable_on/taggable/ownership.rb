@@ -86,6 +86,7 @@ module ActsAsTaggableOn::Taggable
     end
 
     def save_owned_tags
+      STDERR.puts "save_owned_tags"
       tagging_contexts.each do |context|
         cached_owned_tag_list_on(context).each do |owner, tag_list|
 
