@@ -4,7 +4,7 @@ module ActsAsTaggableOn::Taggable
       base.extend ActsAsTaggableOn::Taggable::Ownership::ClassMethods
 
       base.class_eval do
-        after_save :save_owned_tags
+        #after_save :save_owned_tags
       end
 
       base.initialize_acts_as_taggable_on_ownership
@@ -86,7 +86,7 @@ module ActsAsTaggableOn::Taggable
     end
 
     def save_owned_tags
-      STDERR.puts "save_owned_tags"
+      #STDERR.puts "save_owned_tags"
       tagging_contexts.each do |context|
         cached_owned_tag_list_on(context).each do |owner, tag_list|
 

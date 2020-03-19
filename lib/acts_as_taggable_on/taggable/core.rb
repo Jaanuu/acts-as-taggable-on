@@ -9,7 +9,7 @@ module ActsAsTaggableOn::Taggable
 
       base.class_eval do
         attr_writer :custom_contexts
-          after_save :save_tags
+        #after_save :save_tags
       end
 
       base.initialize_acts_as_taggable_on_core
@@ -230,7 +230,7 @@ module ActsAsTaggableOn::Taggable
     end
 
     def save_tags
-      STDERR.puts "save_tags"
+      #STDERR.puts "save_tags"
       tagging_contexts.each do |context|
         next unless tag_list_cache_set_on(context)
         # List of currently assigned tag names
